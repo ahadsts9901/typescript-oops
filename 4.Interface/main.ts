@@ -1,9 +1,13 @@
-// not completed
+// implement only use in interface
 
 interface Food {
     dishName: string,
     price: number,
     isSweet: boolean
+}
+
+interface IsFried {
+    isFried: boolean,
 }
 
 class Fish implements Food {
@@ -20,14 +24,16 @@ class Fish implements Food {
 
 }
 
-class Pizza implements Food {
+class Pizza implements Food, IsFried {
     constructor(
         public dishName: string,
         public price: number,
         public isSweet: boolean,
+        public isFried: boolean,
     ) {
         this.dishName = "Pizza";
         this.price = 15;
         this.isSweet = false;
+        this.isFried = false;
     }
 }
